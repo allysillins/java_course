@@ -45,27 +45,17 @@ public class Circle {
         area = radius * radius * Math.PI;
         return area;
     }
-    public boolean doesOverlap(Circle, otherCircle) {
-        boolean distanceBetweenCenters;
-        boolean xDiff;
-        boolean yDiff;
-        boolean radiusSum;
-
-        // get circle1 attributes
-        x1 = Circle.getX();
-        y1 = Circle.getY();
-        radius1 = Circle.getRadius();
-
-        // get circle2 attributes
-        x2 = otherCircle.getX();
-        y2 = otherCircle.getY();
-        radius2 = otherCircle.getRadius();
+    public boolean doesOverlap(Circle otherCircle) {
+        double distanceBetweenCenters;
+        double xDiff;
+        double yDiff;
+        double radiusSum;
 
         // get distance between circle centers
-        xDiff = Math.abs(x2 - x2);
-        yDiff = Math.abs(y2 - y1);
+        xDiff = Math.abs(this.getX() - otherCircle.getX());
+        yDiff = Math.abs(this.getY() - otherCircle.getY());
         distanceBetweenCenters = Math.sqrt(Math.pow(xDiff, 2) + Math.pow(yDiff, 2));
-        radiusSum = radius1 + radius2;
+        radiusSum = this.getRadius() + otherCircle.getRadius();
 
         // check if overlap
         if (radiusSum >= distanceBetweenCenters) {
