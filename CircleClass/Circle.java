@@ -51,14 +51,14 @@ public class Circle {
         double yDiff;
         double radiusSum;
 
-        // get distance between circle centers
+        // get distance between circle centers & sum of radius
         xDiff = Math.abs(this.getX() - otherCircle.getX());
         yDiff = Math.abs(this.getY() - otherCircle.getY());
-        distanceBetweenCenters = Math.sqrt(Math.pow(xDiff, 2) + Math.pow(yDiff, 2));
+        distanceBetweenCenters = (double) Math.sqrt(Math.pow(xDiff, 2) + Math.pow(yDiff, 2));
         radiusSum = this.getRadius() + otherCircle.getRadius();
 
         // check if overlap
-        if (radiusSum >= distanceBetweenCenters) {
+        if (radiusSum > distanceBetweenCenters) {
             return true;
         }
         else {
