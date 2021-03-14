@@ -33,16 +33,16 @@ public class CircleTester {
 
         // two circle objects that should overlap
         if (circle1.doesOverlap(circle2)) {
-            System.out.println("circles 1 and 2 overlap");
+            System.out.println("    circles 1 and 2 overlap");
         } else {
-            System.out.println("FAILED: circles 1 and 2 do not overlap");
+            System.out.println("    FAILED: circles 1 and 2 do not overlap");
         }
 
         // two circle objects that should not overlap
         if (circle1.doesOverlap(circle3)) {
-            System.out.println("FAILED: circles 1 and 3 overlap");
+            System.out.println("    FAILED: circles 1 and 3 overlap");
         } else {
-            System.out.println("circles 1 and 3 do not overlap");
+            System.out.println("    circles 1 and 3 do not overlap");
         }
 
         System.out.println("Tests complete.");
