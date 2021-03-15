@@ -10,31 +10,54 @@
 package numguesser;
 import java.util.ArrayList;
 
-/*
- * upper and lower
- */
-
 public class NumberGuesser {
     private int low;
     private int high;
-    private int currentGuess;
-    private int oldGuess;
+    private int originalUpper;
+    private int originalLower;
 
+    /**
+     * Constructor
+     * @param lowerBound lower and originalLower user inserted field
+     * @param upperBound upper and originalUpper user inserted field
+     */
     public NumberGuesser(int lowerBound, int upperBound) {
-        lowe = lowerBound;
-        high = higherBound;
+        low = lowerBound;
+        originalLower = lowerBound;
+        high = upperBound;
+        originalUpper = upperBound;
     }
 
+    /**
+     * @return current guess as midpoint
+     */
+    public int getCurrentGuess() {
+        return ((high + low) / 2);
+    }
+
+    /**
+     * Update lower parameter
+     * given number is higher
+     */
     public void higher() {
-        high = oldGuess;
+        low = getCurrentGuess() + 1;
     }
 
+    /**
+     * Update higher parameter
+     * given number is lower
+     */
     public void lower() {
-        low = oldGuess;
+        high = getCurrentGuess() - 1;
     }
 
-    public static int getCurrentGuess(int lowerBound, int upperBound) {
-        System.out.println("50");
+    /**
+     * reset low & high bounds to
+     * original values
+     */
+    public void reset() {
+        low = originalLower;
+        high = originalUpper;
     }
 
 }

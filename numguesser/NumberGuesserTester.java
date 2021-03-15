@@ -14,10 +14,12 @@ public class NumberGuesserTester {
 
         System.out.println("Beginning tests.");
 
+        // test that getCurrentGuess gets the midpoint correctly
         NumberGuesser guesser = new NumberGuesser(1, 100);
-        if (guesser.getCurrentGuess(1, 100) != 50) {
+        if (guesser.getCurrentGuess() != 50) {
             System.out.println("    FAILED NumberGuesser(1,100)");
         }
+
         System.out.println("Tests complete.");
     }
 }
